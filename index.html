@@ -21,7 +21,7 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
@@ -50,7 +50,7 @@
               <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium" href="#faq">FAQ</a></li>
             </ul>
             <form class="ps-lg-5">
-              <label class="btn btn-lg btn-primary rounded-pill order-0" for="userEmail">Become a Beta-Tester</label>
+              <label class="btn btn-lg btn-primary rounded-pill order-0" for="userEmail" onclick="collapseNavbar()">Become a Beta-Tester</label>
             </form>
           </div>
         </div>
@@ -402,6 +402,10 @@
     <script src="assets/js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
+      function collapseNavbar() {
+        $('#navbarSupportedContent').collapse('hide');
+      }
+
       function sendEmail() {
         let emailInput = document.getElementById('userEmail').value
         if(!validateEmail(emailInput)) {
